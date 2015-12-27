@@ -1,12 +1,13 @@
-library(AppliedPredictiveModeling)
-data(segmentationOriginal)
+install.packages("pgmm")
+library(pgmm)
+data(olive)
 library(caret)
 library(ggplot2);
 
-names(segmentationOriginal)
+names(olive)
 
-table(segmentationOriginal$Case)
-table(segmentationOriginal$Class)
+table(olive$Area)
+table(olive$Region)
 intrain<-createDataPartition(y=segmentationOriginal$Class, p=0.5, list=FALSE)
 #training<-segmentationOriginal[-intrain,]
 #testing<-segmentationOriginal[intrain,]

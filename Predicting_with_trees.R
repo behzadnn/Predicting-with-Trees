@@ -19,3 +19,27 @@ text(modFit$finalModel,use.n = T,all = T,cex=0.8)
 install.packages("rpart.plot")
 library(rattle)
 fancyRpartPlot(modFit$finalModel)
+test_data1=testing[1,]
+test_data1$TotalIntench2<-23000
+test_data1$FiberWidthCh1 <- 10
+test_data1$PerimStatusCh1<-2
+
+#test data 2
+test_data2=testing[1,]
+test_data2$TotalIntench2<-50000
+test_data2$FiberWidthCh1 <- 10
+test_data2$VarIntenCh4 <-100
+
+#test data 3
+test_data1=testing[1,]
+test_data1$TotalIntench2<- 57000
+test_data1$FiberWidthCh1 <- 10
+test_data1$PerimStatusCh1<-2
+
+#test data 4
+test_data1=testing[1,]
+test_data1$TotalIntench2<- 57000
+test_data1$FiberWidthCh1 <- 10
+test_data1$PerimStatusCh1<-2
+result1<-predict(modFit,newdata = test_data1)
+print(result1)
